@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: harbor
+      POSTGRES_PASSWORD: harbor
+      POSTGRES_DB: harboraid
+    ports:
+      - "5432:5432"
+    volumes:
+      - harbor_pg:/var/lib/postgresql/data
+volumes:
+  harbor_pg:
